@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Larkspan — websites, AI and IT support for UK small businesses</title>
+<meta name="description" content="Larkspan builds websites for small UK businesses and looks after them for £39 a month. We also set up AI receptionists, AI-assisted hiring and everyday IT support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#E9EEF3; --ink:#1C2740; --lark:#7A5A34; --sun:#F0B23E; --white:#FFFFFF;
+  --muted:#4A5672; --line:#C9D3DF;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--sky);color:var(--ink);font:400 1.125rem/1.6 var(--body)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--lark);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,6vw,4.4rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:.6em}
+h3{font-size:1.3rem;font-weight:500;letter-spacing:-.01em}
+p{max-width:62ch}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.45rem var(--display);letter-spacing:-.02em}
+.logo svg{width:34px;height:34px}
+.top nav{display:flex;gap:26px;font-weight:600;font-size:1rem}
+.top nav a{text-decoration:none}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:720px){.top nav a:not(.navcta){display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:56px 0 88px}
+.hero p.lede{font-size:1.3rem;color:var(--muted);margin:22px 0 30px}
+.btn{display:inline-block;background:var(--sun);color:var(--ink);font:700 1.05rem var(--body);padding:15px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{filter:brightness(.95)}
+.link{font-weight:600;margin-left:22px;text-underline-offset:4px}
+.hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.hero .actions .link{margin-left:0}
+.small{font-size:.95rem;color:var(--muted);margin-top:22px}
+@media(max-width:880px){.hero{grid-template-columns:1fr;padding-top:24px}.phone{margin:0 auto}}
+
+/* phone mock */
+.phone{width:290px;border-radius:38px;background:var(--ink);padding:12px;box-shadow:0 30px 60px -28px rgba(28,39,64,.55);transform:rotate(2.5deg)}
+.screen{border-radius:28px;overflow:hidden;background:var(--white);font-size:.8rem;line-height:1.45}
+.screen .bar{height:26px;background:#f4f4f4;display:flex;align-items:center;justify-content:center;font-size:.68rem;color:#777}
+.screen .shero{background:#2E5E4E;color:#fff;padding:30px 18px 26px}
+.screen .shero b{display:block;font:700 1.35rem/1.1 var(--display)}
+.screen .shero span{opacity:.85}
+.screen .call{display:inline-block;margin-top:12px;background:#fff;color:#2E5E4E;font-weight:700;padding:6px 12px;border-radius:999px}
+.screen .sbody{padding:16px 18px 20px}
+.screen .sbody strong{display:block;font-family:var(--display);color:#2E5E4E;margin:10px 0 4px}
+.screen .hours{display:grid;grid-template-columns:1fr auto;gap:2px 10px;color:#444}
+.screen .map{margin-top:12px;height:70px;border-radius:10px;background:repeating-linear-gradient(135deg,#e7ece9 0 10px,#dfe6e2 10px 20px);position:relative}
+.screen .map:after{content:"";position:absolute;left:52%;top:30%;width:14px;height:14px;border-radius:50% 50% 50% 0;background:#c0392b;transform:rotate(-45deg)}
+.caption{font-size:.9rem;color:var(--muted);text-align:center;margin-top:18px}
+
+/* sections */
+section{padding:84px 0;border-top:1px solid var(--line)}
+.intro{display:grid;grid-template-columns:1fr 1.6fr;gap:48px}
+@media(max-width:880px){.intro{grid-template-columns:1fr;gap:12px}}
+.services{list-style:none}
+.services li{display:grid;grid-template-columns:1fr auto;gap:6px 28px;padding:26px 0;border-bottom:1px solid var(--line)}
+.services li:first-child{padding-top:0}
+.services .price{font:700 1.15rem var(--display);color:var(--lark);white-space:nowrap;align-self:start}
+.services p{grid-column:1/-1;color:var(--muted)}
+@media(max-width:560px){.services li{grid-template-columns:1fr}}
+
+/* offer */
+.offer{background:var(--ink);color:var(--white);border-radius:28px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.offer h2{color:var(--white)}
+.offer p{color:#C9D3E6}
+.offer .figs{display:grid;gap:22px;align-content:start}
+.fig{border:1px solid #3A4766;border-radius:18px;padding:22px}
+.fig b{display:block;font:700 2.4rem/1 var(--display);color:var(--sun)}
+.fig span{color:#C9D3E6}
+.offer ul{margin:20px 0 0 1.1em;color:#C9D3E6}
+.offer li{margin:6px 0}
+@media(max-width:880px){.offer{grid-template-columns:1fr;padding:34px}}
+
+/* steps */
+.steps{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:12px}
+.steps li{counter-increment:s}
+.steps li:before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--white);border:2px solid var(--lark);color:var(--lark);font:700 1.2rem var(--display);margin-bottom:16px}
+.steps p{color:var(--muted);margin-top:6px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+
+/* about + contact */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+.contact{background:var(--white);border-radius:28px;padding:48px}
+.contact a.mail{font:700 clamp(1.4rem,3vw,2rem) var(--display);text-underline-offset:6px;color:var(--ink)}
+footer{padding:40px 0 56px;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#" aria-label="Larkspan home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#1C2740"/><path d="M7 25 C14 14, 26 14, 33 25" stroke="#F0B23E" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M17 15 l4-5 2 5z" fill="#E9EEF3"/></svg>
+      Larkspan
+    </a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#websites">Website plan</a>
+      <a href="#how">How it works</a>
+      <a class="navcta" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Your business, easy to find online.</h1>
+        <p class="lede">We build websites for small UK businesses and keep them running for £39 a month. If your customers can't find you on Google, they're finding someone else.</p>
+        <div class="actions"><a class="btn" href="#contact">Ask for a free demo site</a>
+        <a class="link" href="#websites">See what's included</a></div>
+        <p class="small">No contract. Cancel the care plan any time with 30 days' notice.</p>
+      </div>
+      <div>
+        <div class="phone" role="img" aria-label="Example of a small business website on a phone">
+          <div class="screen">
+            <div class="bar">cornerbakery.co.uk</div>
+            <div class="shero"><b>The Corner Bakery</b><span>Bread, cakes and coffee, baked here every morning</span><br><span class="call">Call 0113 000 0000</span></div>
+            <div class="sbody">
+              <strong>Opening hours</strong>
+              <div class="hours"><span>Mon–Fri</span><span>7am–4pm</span><span>Saturday</span><span>8am–2pm</span></div>
+              <strong>Find us</strong>
+              <div>12 Market Street, Leeds</div>
+              <div class="map"></div>
+            </div>
+          </div>
+        </div>
+        <p class="caption">An example site. Yours uses your own photos, hours and details.</p>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="intro">
+        <div>
+          <h2>What we do</h2>
+          <p>Four services, all built for businesses with one to fifty people and no IT department.</p>
+        </div>
+        <ul class="services">
+          <li>
+            <h3>Websites and care plans</h3><span class="price">£149 + £39/month</span>
+            <p>A fast, mobile-friendly website with your hours, services, photos and a map. We host it, keep it secure and make your changes.</p>
+          </li>
+          <li>
+            <h3>AI receptionist</h3><span class="price">from £99/month</span>
+            <p>Answers calls and website chats when you're busy or closed, takes bookings and messages, and sends you a summary.</p>
+          </li>
+          <li>
+            <h3>AI-assisted hiring and HR</h3><span class="price">from £249 per role</span>
+            <p>Job adverts, CV screening and interview scheduling, run by people who have managed hotel HR. Ongoing HR support is available too.</p>
+          </li>
+          <li>
+            <h3>IT support</h3><span class="price">from £25 per user/month</span>
+            <p>Email, Microsoft 365 or Google Workspace, laptops, Wi-Fi and backups set up properly, with help when something breaks.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="websites">
+      <div class="offer">
+        <div>
+          <h2>The website plan</h2>
+          <p>Most small businesses don't need a £3,000 website. They need a clear, quick site that shows up on Google and stays up to date. That's what this is.</p>
+          <ul>
+            <li>One-page website, designed for phones first</li>
+            <li>Your domain connected (or we'll register one)</li>
+            <li>Hosting, security updates and backups</li>
+            <li>Changes to text, prices, menus and photos, usually same week</li>
+            <li>Google Business Profile linked to your site</li>
+          </ul>
+        </div>
+        <div class="figs">
+          <div class="fig"><b>£149</b><span>one-off setup</span></div>
+          <div class="fig"><b>£39</b><span>a month for hosting, care and changes. First month free.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>How a website goes live</h2>
+      <ol class="steps">
+        <li><h3>See your demo</h3><p>We build a free draft using the details already public about your business. No cost to look.</p></li>
+        <li><h3>Send your details</h3><p>Reply with photos, opening hours and anything you'd like to change. We'll do the rest.</p></li>
+        <li><h3>Go live</h3><p>Pay the setup fee, approve the final version and it's online, usually within five working days.</p></li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="about">
+        <div><h2>A small studio, on purpose</h2></div>
+        <div>
+          <p>Larkspan is a London-based studio run by Siva, who has spent years running operations and HR in UK hospitality. We work with a small team of developers in the UK and India, which keeps prices fair.</p>
+          <p style="margin-top:14px">We use AI to do routine work faster, including drafting demo sites and answering emails. Siva oversees every project, and you can ask to speak to a person at any point.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Get in touch</h2>
+        <p>Tell us your business name and town, and we'll send you a free demo site within two working days.</p>
+        <p style="margin-top:18px"><a class="mail" href="mailto:hello@larkspan.co.uk?subject=Free%20demo%20site">hello@larkspan.co.uk</a></p>
+      </div>
+    </section>
+  </main>
+</div>
+<footer>
+  <div class="wrap">
+    <span>Larkspan · London, United Kingdom</span>
+    <span><a href="privacy.html">Privacy and how we contact businesses</a> &nbsp; <a href="optout.html">Stop emails from us</a></span>
+  </div>
+</footer>
+</body>
+</html>
